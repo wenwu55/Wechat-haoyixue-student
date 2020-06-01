@@ -1,0 +1,11 @@
+<!--pages/addMessage/addMessage.wxml-->
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea class="weui-textarea" value="{{leaveContent}}" placeholder-class="place-holder" maxlength="200" placeholder="请输入留言" bindinput="changeInput" />
+            <view class="weui-textarea-counter">{{length}}/200</view>
+        </view>
+    </view>
+</view>
+
+<button class="{{length > 0 ? 'commit' : 'disabled'}}" bindtap="submit">提交</button>

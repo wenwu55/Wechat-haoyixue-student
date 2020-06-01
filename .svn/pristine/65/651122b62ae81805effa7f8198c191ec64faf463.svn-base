@@ -1,0 +1,14 @@
+<!--pages/homework/homework.wxml-->
+<view>
+  <scroll-view class="scroll-view" scroll-x="true" style="width: 100%">
+    <view class="scroll-view-item">语文</view>
+    <view class="scroll-view-item">数学</view>
+    <view class="scroll-view-item">英语</view>
+    <view class="scroll-view-item">地理</view>
+    <view class="scroll-view-item">生物</view>
+    <view class="scroll-view-item">历史</view>
+    <view class="scroll-view-item">政治</view>
+    <view class="scroll-view-item">物理</view>
+    <view class="scroll-view-item">化学</view>
+  </scroll-view>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/leaveDetail/leaveDetail.wxml-->
+<view class="card">
+  <view class="felx between">
+    <view class="labelView">学生姓名：<text class="time">{{options.name}}</text></view>
+    <view class="status {{options.forStatus == 0 ? 'no' : options.forStatus == 1 ? 'yes' : 'false'}}">{{options.forStatus == 0 ? '审批中': options.forStatus == 1 ? '已审批' : '已拒绝'}}</view>
+  </view>
+  <view class="felx">
+    <view class="labelView">提交时间：<text class="time">{{options.createY}} {{options.createH}}</text></view>
+  </view>
+  <!-- <view class="felx">
+    <view class="labelView">学校班级：{{options.school}} {{options.class}}</view>
+  </view> -->
+  <view class="felx">
+    <view class="labelView">开始时间：<text class="time">{{options.startY}} {{options.startH}}</text></view>
+  </view>
+  <view class="felx">
+    <view class="labelView">结束时间：<text class="time">{{options.endY}} {{options.endH}}</text></view>
+  </view>
+  <view class="contentView">
+    <view class="label">请假事由：</view>
+    <view class="content">{{options.content}}</view>
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<!--pages/bindStudent/bindStudent.wxml-->
+<view>
+  <view class="list" wx:for="{{studentList}}" wx:key="{{item.userId}}">
+    <view>{{item.studentName}}</view>
+    <view class="buttonView">
+      <button class="btn" bindtap="setDefault" data-workNo="{{item.workNo}}" data-index="{{index}}">{{item.workNo == defaultStudent.workNo ? '默认' : '设为默认'}}</button>
+      <button class="btn" data-workNo="{{item.workNo}}" data-userId="{{item.userId}}" bindtap="delStudent">移除</button>
+    </view>
+  </view>
+
+  <button class="addBtn" bindtap="addStudent">新增学生</button>
+
+</view>

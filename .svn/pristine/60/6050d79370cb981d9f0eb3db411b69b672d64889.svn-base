@@ -1,0 +1,91 @@
+<!--index.wxml-->
+<view>
+  <view class="weui-navbar">
+    <view class="{{navbarStatus == 1 ? 'weui-navbar__item weui-bar__item_on' : 'weui-navbar__item'}}" bindtap="changeStatus" data-status="1">
+      门禁记录
+    </view>
+    <view class="{{navbarStatus == 2 ? 'weui-navbar__item weui-bar__item_on' : 'weui-navbar__item'}}" bindtap="changeStatus" data-status="2">
+      消费记录
+    </view>
+  </view>
+  <view class="weui-tab__panel">
+    <view wx:if="{{navbarStatus == 1}}">
+      <view class="detail">
+        <image src="../../assets/homeWork.png" class="photo"></image>
+        <view class="weui-flex">
+          <view class="weui-flex__item name">新邵思源实验学校</view>
+          <view class="weui-flex__item name textRight">某某任
+            <image class="inOut" src="../../assets/in.png"></image>
+          </view>
+        </view>
+        <view class="weui-flex">
+          <view class="weui-flex__item number">学号：1234567890</view>
+          <view class="weui-flex__item number textRight">2019-07-26 20:08:40</view>
+        </view>
+      </view>
+      <view class="detail">
+        <image src="../../assets/homeWork.png" class="photo"></image>
+        <view class="weui-flex">
+          <view class="weui-flex__item name">
+            <view class="placeholder">新邵思源实验学校</view>
+          </view>
+          <view class="weui-flex__item name textRight">某某任
+            <image class="inOut" src="../../assets/out.png"></image>
+          </view>
+        </view>
+        <view class="weui-flex">
+          <view class="weui-flex__item number">
+            <view class="placeholder">学号：1234567890</view>
+          </view>
+          <view class="weui-flex__item number textRight">
+            <view class="placeholder">2019-07-26 20:08:40</view>
+          </view>
+        </view>
+      </view>
+      <view class="detail">
+        <image src="../../assets/homeWork.png" class="photo"></image>
+        <view class="weui-flex">
+          <view class="weui-flex__item name">
+            <view class="placeholder">新邵思源实验学校</view>
+          </view>
+          <view class="weui-flex__item name textRight">
+            <view class="placeholder">某某任</view>
+          </view>
+        </view>
+        <view class="weui-flex">
+          <view class="weui-flex__item number">
+            <view class="placeholder">学号：1234567890</view>
+          </view>
+          <view class="weui-flex__item number textRight">
+            <view class="placeholder">2019-07-26 20:08:40</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{navbarStatus == 2}}">
+      <view class="dateView">
+        <view class="section">
+          <text>开始时间:</text> 
+          <picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-30" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+
+        <view class="section">
+          <text>结束时间:</text> 
+          <picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-30" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view>sss</view>
+    </view>
+
+  </view>
+</view>

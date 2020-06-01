@@ -1,0 +1,27 @@
+/**app.wxss**/
+@import "WeUI.wxss";
+page {
+  background-color: #F4F5F9;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.default {
+  padding-top: 203rpx;
+  text-align: center;
+}
+
+.nothing {
+  width: 360rpx;
+  height: 207rpx;
+  display: inline-block;
+  margin-bottom: 16rpx;
+}
+
+.text {
+  color: #999999;
+  font-size: 28rpx;
+  line-height: 50rpx;
+}

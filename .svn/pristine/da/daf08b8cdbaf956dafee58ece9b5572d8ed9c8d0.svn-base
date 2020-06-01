@@ -1,0 +1,9 @@
+/* pages/homework/homework.wxss */
+
+.scroll-view {
+  display: felx;
+}
+
+.scroll-view-item {
+  flex: 1;
+}

@@ -1,0 +1,157 @@
+// pages/bindStudent/bindStudent.js
+const app = getApp();
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    hasStudent: true,
+    disabled: true,
+    studentList: [],
+    defaultStudent: {}
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+  },
+
+  // 查询绑定学生
+  queryStudent: function() {
+    let that = this
+    const userId = wx.getStorageSync('userId')
+    wx.request({
+      url: app.globalData.URL + 'app/user/getChildrenByUser?userId=' + userId,
+      method: 'POST',
+      success: function(res) {
+        if (res.statusCode === 200) {
+          console.log(res.data.data)
+          // 查询本地是否有缓存默认的学生
+          let defaultStudent = wx.getStorageSync('defaultStudent')
+          if (!defaultStudent.userId) {
+            // 没有的话把列表第一项当默认的并存入缓存
+            defaultStudent = res.data.data[0]
+            wx.setStorageSync('defaultStudent', defaultStudent)
+            app.globalData.defaultStudent = defaultStudent
+          }
+          console.log(defaultStudent)
+          that.setData({
+            studentList: res.data.data,
+            defaultStudent: defaultStudent
+          })
+        }
+      }
+    })
+  },
+
+  // 设置默认学生
+  setDefault: function(e) {
+    const that = this
+    // 如果已经是默认的了
+    const workNo = e.currentTarget.dataset.workno
+    const index = e.currentTarget.dataset.index
+    if (workNo == that.data.defaultStudent.workNo) {
+      wx.showToast({
+        title: '已经是默认了~',
+        icon: 'none'
+      })
+      return false
+    }
+    const defaultStudent = that.data.studentList[index]
+    wx.setStorageSync('defaultStudent', defaultStudent)
+    app.globalData.defaultStudent = defaultStudent
+    that.setData({
+      defaultStudent: defaultStudent
+    })
+  },
+
+  // 添加学生
+  addStudent: function() {
+    wx.navigateTo({
+      url: '../student/student',
+    })
+  },
+
+  // 删除学生
+  delStudent: function(e) {
+    // 如果是默认学生不可删除
+    const that = this
+    const userId = e.currentTarget.dataset.userid
+    const workNo = e.currentTarget.dataset.workno
+    // if (workNo == that.data.defaultStudent.workNo) {
+    //   wx.showToast({
+    //     title: '默认学生不可删除',
+    //     icon: 'none'
+    //   })
+    //   return false
+    // }
+    const param = {
+      userId: userId,
+      workNo: workNo
+    }
+    console.log(param)
+    wx.request({
+      url: `${app.globalData.URL}app/user/deleteStudentRelation`,
+      method: 'POST',
+      data: param,
+      success: function(res) {
+        console.log(res)
+        if (res.data.code == 1) {
+          that.queryStudent()
+        }
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    // 查询绑定的学生
+    this.queryStudent()
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

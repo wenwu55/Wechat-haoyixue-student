@@ -1,0 +1,35 @@
+/* pages/student/student.wxss */
+page {
+  padding-top: 17rpx;
+}
+.weui-cell {
+  background-color: #fff;
+}
+
+.weui-cell__bd {
+  color: #666666;
+  font-size: 30rpx;
+}
+
+.weui-cell__ft {
+  color: #333333;
+  font-size: 30rpx;
+}
+
+.commit {
+  width:600rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(38,239,210,1) 0%,rgba(93,187,173,1) 100%);
+  border-radius:40rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold,PingFangSC;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:88rpx;
+  margin: 40rpx auto 0;
+}
+
+.disabled {
+  background:rgba(207,206,206,1);
+  border: 1rpx solid #CFCECE;
+}

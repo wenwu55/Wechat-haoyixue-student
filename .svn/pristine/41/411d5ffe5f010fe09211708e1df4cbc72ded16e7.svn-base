@@ -1,0 +1,9 @@
+/**app.wxss**/
+@import "WeUI.wxss";
+page {
+  background-color: #F4F5F9;
+}
+
+.textRight {
+  text-align: right;
+}

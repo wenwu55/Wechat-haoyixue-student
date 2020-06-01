@@ -1,0 +1,37 @@
+<!--pages/homeSchool/homeSchool.wxml-->
+<view>
+  <navigator url="../homework/homework" class="card">
+    <image class="titleImage" src="../../assets/homeWork.png"></image>
+    <view class="right">
+      <view class="title">家庭作业</view>
+      <view class="english">Homework</view>
+    </view>
+  </navigator>
+</view>
+<view>
+  <navigator class="card" url="../schoolNotice/schoolNotice">
+    <image class="titleImage" src="../../assets/classNotice.png"></image>
+    <view class="right">
+      <view class="title">班级通知</view>
+      <view class="english">Class Notice</view>
+    </view>
+  </navigator>
+</view>
+<view>
+  <navigator class="card" url="../studentLeave/studentLeave">
+    <image class="titleImage" src="../../assets/studentLeave.png"></image>
+    <view class="right">
+      <view class="title">学生请假</view>
+      <view class="english">Student Leave</view>
+    </view>
+  </navigator>
+</view>
+<view>
+  <navigator class="card" url="../studentMessage/studentMessage">
+    <image class="titleImage" src="../../assets/studentMessage.png"></image>
+    <view class="right">
+      <view class="title">学生留言</view>
+      <view class="english">Student Message</view>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,59 @@
+/* pages/leaveDetail/leaveDetail.wxss */
+.card {
+  background-color: #fff;
+  padding: 24rpx;
+}
+
+.felx {
+  display: flex;
+}
+
+.labelView {
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 50rpx;
+}
+
+.time {
+  color: #333;
+}
+
+.status {
+  font-size: 28rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.no {
+  color: #FFCD7C;
+}
+
+.yes {
+  color: #5DBBAD;
+}
+
+.false {
+  color: #F10101;
+}
+
+.contentView {
+  display: flex;
+  flex-wrap: wrap;
+}
+.label {
+  flex: 3;
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 50rpx;
+}
+
+.content {
+  flex: 13;
+  font-size: 26rpx;
+  word-break: break-all;
+  word-wrap: break-word;
+}

@@ -1,0 +1,48 @@
+/* pages/addMessage/addMessage.wxss */
+page {
+  padding-top: 17rpx;
+}
+
+.weui-textarea {
+  height: 400rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+
+.place-holder {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.weui-textarea-counter {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.commit {
+  width:600rpx;
+  height:88rpx;
+  background:linear-gradient(90deg,rgba(38,239,210,1) 0%,rgba(93,187,173,1) 100%);
+  border-radius:40rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold,PingFangSC;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:88rpx;
+  margin: 40rpx auto 0;
+}
+
+.disabled {
+  width:600rpx;
+  height:88rpx;
+  border-radius:40rpx;
+  font-size:30rpx;
+  font-family:PingFangSC-Semibold,PingFangSC;
+  font-weight:600;
+  color:rgba(255,255,255,1);
+  line-height:88rpx;
+  margin: 40rpx auto 0;
+  background:rgba(207,206,206,1);
+  border: 1rpx solid #CFCECE;
+}

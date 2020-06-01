@@ -1,0 +1,59 @@
+//my.js
+const util = require('../../utils/util.js')
+//获取应用实例
+const app = getApp()
+
+Page({
+  data: {
+    userInfo: wx.getStorageSync("userInfo") || app.globalData.userInfo
+  },
+  onLoad: function () {
+    wx.login({
+      success(res) {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: app.globalData.URL + "miniProgram/getOpenId",
+            method: "POST",
+            data: {
+              js_code: res.code
+            },
+            success(response) {
+              wx.setStorageSync("openid", response.data.data.openid)
+              wx.setStorageSync("userId", response.data.data.userId)
+              wx.setStorageSync("phone", response.data.data.phone)
+              wx.setStorageSync("role", response.data.data.role)
+            }
+          })
+          console.log(res)
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    })
+  },
+  // callback
+  getUserInfo(res) {
+    console.log(res)
+    let that = this
+    that.setData({
+      userInfo: res.detail.userInfo
+    })
+    app.globalData.userInfo = res.detail.userInfo
+    wx.setStorageSync("userInfo", res.detail.userInfo)
+  },
+  bindPhone: function() {
+    const phone = wx.getStorageSync("phone")
+    if (!phone) {
+      wx.navigateTo({
+        url: '../bindPhone/bindPhone'
+      })
+    } else {
+      wx.showToast({
+        title: '您已绑定过手机~',
+        icon: "none",
+        duration: 1000
+      })
+    }
+  }
+})

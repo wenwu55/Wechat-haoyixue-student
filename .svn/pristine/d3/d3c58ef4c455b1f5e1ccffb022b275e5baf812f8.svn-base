@@ -1,0 +1,11 @@
+<!--pages/noticeDetail/noticeDetail.wxml-->
+<view class="article">
+  <view class="title">这是一条通知</view>
+  <view class="date">2019.09.01 20:00</view>
+
+  <view class="detail">这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知这是一条放假通知。</view>
+
+  <view class="imageView">
+    <image src="../../assets/schoolNotice.png"></image>
+  </view>
+</view>

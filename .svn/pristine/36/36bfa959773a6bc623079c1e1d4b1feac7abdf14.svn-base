@@ -1,0 +1,26 @@
+<!--pages/schoolNotice/schoolNotice.wxml-->
+<view>
+  <view class="card">
+    <view class="main">
+      <view class="title">中秋节快乐！</view>
+      <view class="date">2018-05-10 20:08:40</view>
+    </view>
+    <view class="desc">小明，放学早点回家吃饭，今天刘阿姨来家里做客，妈妈做了很多好吃的。</view>
+  </view>
+
+  <view class="card">
+    <view class="main">
+      <view class="title">中秋节快乐！</view>
+      <view class="date">2018-05-10 20:08:40</view>
+    </view>
+    <view class="desc">小明，放学早点回家吃饭，今天刘阿姨来家里做客，妈妈做了很多好吃的。</view>
+  </view>
+
+  <view class="card">
+    <view class="main">
+      <view class="title">中秋节快乐！</view>
+      <view class="date">2018-05-10 20:08:40</view>
+    </view>
+    <view class="desc">这是一条留言，最多展示三行，差不多就是这个效果了，超过的就省略，这样可以看懂吧吧吧吧吧吧吧吧吧吧吧 吧吧吧吧吧吧吧 吧吧吧吧吧吧吧 吧吧吧吧吧吧吧吧吧吧吧吧吧吧吧吧吧</view>
+  </view>
+</view>

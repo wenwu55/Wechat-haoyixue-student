@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/homeSchool/homeSchool",
+    "pages/my/my",
+    "pages/bindPhone/bindPhone",
+    "pages/homework/homework",
+    "pages/schoolNotice/schoolNotice",
+    "pages/studentLeave/studentLeave",
+    "pages/addMessage/addMessage",
+    "pages/studentMessage/studentMessage",
+    "pages/noticeDetail/noticeDetail",
+    "pages/bindStudent/bindStudent",
+    "pages/messageDetail/messageDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5DBBAD",
+    "navigationBarTitleText": "湖南好易学",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "一卡通",
+        "iconPath": "assets/ic_card_unselected.png",
+        "selectedIconPath": "assets/ic_card_selected.png"
+      },
+      {
+        "pagePath": "pages/homeSchool/homeSchool",
+        "text": "家校互动",
+        "iconPath": "assets/ic_interaction_unselected.png",
+        "selectedIconPath": "assets/ic_interaction_selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/ic_my_unselected.png",
+        "selectedIconPath": "assets/ic_my_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

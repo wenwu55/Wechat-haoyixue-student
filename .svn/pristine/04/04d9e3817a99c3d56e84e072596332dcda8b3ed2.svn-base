@@ -1,0 +1,5 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+  <view class="card">
+    <view class="desc">{{content}}</view>
+    <view class="date">{{createTime}}</view>
+  </view>

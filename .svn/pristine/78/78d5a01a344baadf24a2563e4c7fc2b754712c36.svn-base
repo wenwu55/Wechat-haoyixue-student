@@ -1,0 +1,5 @@
+<!--pages/messageDetail/messageDetail.wxml-->
+  <view class="card">
+    <view class="desc">小明，放学早点回家吃饭，今天刘阿姨来家里做客，妈妈做了很多好吃的小明，放学早点回家吃饭，今天刘阿姨来家里做客，妈妈做了很多好吃的小明，放学早点回家吃饭，今天刘阿姨来。</view>
+    <view class="date">2018-05-10 20:08:40</view>
+  </view>
