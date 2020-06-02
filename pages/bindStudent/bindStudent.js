@@ -97,8 +97,11 @@ Page({
       method: 'POST',
       data: param,
       success: function(res) {
-        console.log(res)
+        // 如果是默认学生移除缓存
         if (res.data.code == 1) {
+          if (workNo == that.data.defaultStudent.workNo) {
+            wx.removeStorageSync('defaultStudent')
+          }
           that.queryStudent()
         }
       }

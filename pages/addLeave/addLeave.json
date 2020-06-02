@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "pickerYMDHM": "/components/pickerYMDHM/pickerYMDHM"
+  },
   "navigationBarTitleText": "学生请假"
 }

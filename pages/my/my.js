@@ -5,7 +5,8 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: wx.getStorageSync("userInfo") || app.globalData.userInfo
+    userInfo: wx.getStorageSync("userInfo") || app.globalData.userInfo,
+    phone: wx.getStorageSync("phone")
   },
   onLoad: function () {
   },
@@ -25,13 +26,7 @@ Page({
       wx.navigateTo({
         url: '../bindPhone/bindPhone'
       })
-    } else {
-      wx.showToast({
-        title: '您已绑定过手机~',
-        icon: "none",
-        duration: 1000
-      })
-    }
+    } else {}
   },
   //
   queryResults: function() {

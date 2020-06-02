@@ -95,7 +95,6 @@ Page({
     let defaultStudent = wx.getStorageSync('defaultStudent')
     // 计算时间  默认查询近四个月
     const endRecordTime = that.Month(0)
-    console.log(endRecordTime)
     const startRecordTime = that.Month(-4)
     if (userId) {
       // 授权登录过但未设置过默认学生
@@ -106,6 +105,13 @@ Page({
           method: 'POST',
           success: function (res) {
             if (res.statusCode === 200) {
+              if (res.data.data.length === 0) {
+                wx.showToast({
+                  title: '您还未绑定学生,请前往我的页面绑定学生',
+                  icon: 'none'
+                })
+                return false
+              }
               // 没有的话把列表第一项当默认的并存入缓存
               defaultStudent = res.data.data[0]
               wx.setStorageSync('defaultStudent', defaultStudent)
