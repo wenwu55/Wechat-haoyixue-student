@@ -16,6 +16,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let isIphoneX = app.globalData.isIphoneX;
+    this.setData({
+      isIphoneX: isIphoneX
+    })
   },
 
   // 查询绑定学生
@@ -65,6 +69,10 @@ Page({
     that.setData({
       defaultStudent: defaultStudent
     })
+    wx.showToast({
+      title: '设置成功！',
+      icon: 'success'
+    })
   },
 
   // 添加学生
@@ -87,25 +95,41 @@ Page({
     //   })
     //   return false
     // }
-    const param = {
-      userId: userId,
-      workNo: workNo
-    }
-    console.log(param)
-    wx.request({
-      url: `${app.globalData.URL}app/user/deleteStudentRelation`,
-      method: 'POST',
-      data: param,
-      success: function(res) {
-        // 如果是默认学生移除缓存
-        if (res.data.code == 1) {
-          if (workNo == that.data.defaultStudent.workNo) {
-            wx.removeStorageSync('defaultStudent')
+    wx.showModal({
+      title: '移除学生',
+      content: '确定要移除该学生吗？',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          const param = {
+            userId: userId,
+            workNo: workNo
           }
-          that.queryStudent()
+          console.log(param)
+          wx.request({
+            url: `${app.globalData.URL}app/user/deleteStudentRelation`,
+            method: 'POST',
+            data: param,
+            success: function (res) {
+              // 如果是默认学生移除缓存
+              if (res.data.code == 1) {
+                if (workNo == that.data.defaultStudent.workNo) {
+                  wx.removeStorageSync('defaultStudent')
+                }
+                wx.showToast({
+                  title: '移除成功！',
+                  icon: 'success'
+                })
+                that.queryStudent()
+              }
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
         }
       }
     })
+
   },
 
   /**

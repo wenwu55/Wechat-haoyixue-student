@@ -1,7 +1,7 @@
 <!--pages/schoolNotice/schoolNotice.wxml-->
 <view wx:if="{{noticeList.length > 0}}">
   <view class="card" wx:for="{{noticeList}}" wx:key="{{index}}" data-title="{{item.title}}" data-createtime="{{item.createtime}}" 
- data-content="{{item.content}}" bindtap="viewDetail">
+ data-content="{{item.content}}" data-pics="{{item.imgUrl}}" bindtap="viewDetail">
     <view class="main">
       <view class="title">{{item.title}}</view>
       <view class="date">{{item.createtime}}</view>

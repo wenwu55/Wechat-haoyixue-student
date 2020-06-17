@@ -4,6 +4,17 @@ App({
     // 展示本地存储能力
 
     const that = this
+    // 获取手机型号
+    wx.getSystemInfo({
+      success: res => {
+        let modelmes = res.model;
+        console.log(modelmes)
+        if (modelmes.search('iPhone X') != -1) {
+          that.globalData.isIphoneX = true
+        }
+        wx.setStorageSync('modelmes', modelmes)
+      }
+    })
     // 登录
     wx.checkSession({
       success(e) {
@@ -104,12 +115,13 @@ App({
         }
       })
     }
-
   },
   globalData: {
+    isIphoneX: false,
     userInfo: null,
     defaultStudent: {},
-    // URL: 'http://192.168.0.176:9666/'
+    // URL: 'http://139.9.217.233:9666/'
+    // URL: 'http://192.168.0.7:9666/'
     URL: 'https://duchengedu.com/wechatHyx/'
   }
 })

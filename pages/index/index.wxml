@@ -32,9 +32,9 @@
         </view>
       </view>
 
-      <view class="default" wx:if="{{accessList.length == 0}}">
+      <view class="default" wx:if="{{noDate}}">
         <image class="nothing" src="../../assets/nothing.png"></image>
-        <view class="text">正在努力加载数据······</view>
+        <view class="text">暂无数据</view>
       </view>
     </view>
 

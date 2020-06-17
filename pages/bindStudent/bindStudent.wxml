@@ -1,5 +1,5 @@
 <!--pages/bindStudent/bindStudent.wxml-->
-<view>
+<view style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">
   <view class="list" wx:for="{{studentList}}" wx:key="{{item.userId}}">
     <view>{{item.studentName}}</view>
     <view class="buttonView">
@@ -8,6 +8,6 @@
     </view>
   </view>
 
-  <button class="addBtn" bindtap="addStudent">新增学生</button>
+  <button class="addBtn" bindtap="addStudent" style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">新增学生</button>
 
 </view>

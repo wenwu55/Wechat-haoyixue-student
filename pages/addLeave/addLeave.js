@@ -247,7 +247,7 @@ Page({
     } else {
       // 处理教师名字为空的情况
       currentStudent.tdList.forEach(item => {
-        item.showName = item.teacherName + ' 手机:' + item.phone
+        item.showName = (item.teacherName? item.teacherName : '教师') + ' 手机:' + item.phone
       })
       that.setData({
         teacherList: currentStudent.tdList

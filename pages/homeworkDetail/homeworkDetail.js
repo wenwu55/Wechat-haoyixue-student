@@ -21,10 +21,20 @@ Page({
       title: options.title,
       createTime: options.createTime,
       content: options.content,
+      cur: options.cur,
       imageList: imageList
     })
   },
+  //预览单个图片
+  previewImage: function (e) {
+    let that = this;
+    let src = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: that.data.imageList // =============重点重点=============
+    })
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -50,7 +60,12 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+    const cur = this.data.cur
+    prevPage.setData({
+      currentTab: cur
+    })
   },
 
   /**

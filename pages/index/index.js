@@ -16,7 +16,8 @@ Page({
     totalPages: 1,
     start_date: '',
     end_date: '',
-    expenseList: []
+    expenseList: [],
+    noDate: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -133,6 +134,12 @@ Page({
                 success: function(res) {
                   if (res.data.code == 1) {
                     let list = res.data.data.list
+                    console.log(list)
+                    if (list.length == 0) {
+                      this.setData({
+                        noDate: true
+                      })
+                    }
                     list.forEach(item => {
                       item.createTime = util.formatTime(item.createTime)
                     })
@@ -174,6 +181,11 @@ Page({
           success: function (res) {
             if (res.data.code == 1) {
               let list = res.data.data.list
+              if (list.length == 0) {
+                this.setData({
+                  noDate: true
+                })
+              }
               list.forEach(item => {
                 item.createTime = util.formatTime(item.createTime)
               })

@@ -106,7 +106,7 @@ Page({
   viewDetail: function (e) {
     const dataset = e.currentTarget.dataset
     wx.navigateTo({
-      url: `../noticeDetail/noticeDetail?title=${dataset.title}&createtime=${dataset.createtime}&content=${dataset.content}`,
+      url: `../noticeDetail/noticeDetail?title=${dataset.title}&createtime=${dataset.createtime}&content=${dataset.content}&pics=${dataset.pics}`,
     })
   },
 

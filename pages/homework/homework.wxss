@@ -61,6 +61,10 @@ page{
   font-size:30rpx;
   font-weight:600;
   color:rgba(51,51,51,1);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 55%;
+  text-overflow: ellipsis;
 }
 
 .time {

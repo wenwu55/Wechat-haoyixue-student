@@ -4,7 +4,7 @@
   <view class="date">{{createtime}}</view>
 
   <view class="detail">{{content}}</view>
-
+  <image class="pics" wx:for="{{imageList}}" wx:key="{{index}}" src="{{item}}" bindtap='previewImage' data-src="{{item}}"></image>
   <!-- <view class="imageView">
     <image src="../../assets/schoolNotice.png"></image>
   </view> -->

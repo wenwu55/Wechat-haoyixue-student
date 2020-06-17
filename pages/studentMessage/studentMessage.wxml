@@ -1,5 +1,5 @@
 <!--pages/studentMessage/studentMessage.wxml-->
-<view  wx:if="{{messageList.length > 0}}">
+<view  wx:if="{{messageList.length > 0}}" style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">
   <view class="card" wx:for="{{messageList}}" wx:key="{{index}}" data-content="{{item.leaveContent}}" data-time="{{item.leaveTime}}" bindtap="goDetail">
     <view class="desc">{{item.leaveContent}}</view>
     <view class="date">{{item.className ? item.className : ''}}  {{item.studentName ? item.studentName : ''}}  {{item.leaveTime}}</view>
@@ -9,7 +9,6 @@
 <view class="default" wx:if="{{messageList.length == 0}}">
   <image class="nothing" src="../../assets/nothing.png"></image>
   <view class="text">哎呀~还没有数据耶</view>
-  <view class="text">请检查学生绑定信息后联系管理员</view>
 </view>
 
-<button class="addBtn" bindtap="addMessage">新增留言</button>
+<button class="addBtn" bindtap="addMessage" style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">新增留言</button>

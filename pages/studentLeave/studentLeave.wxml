@@ -1,5 +1,5 @@
 <!--pages/studentLeave/studentLeave.wxml-->
-<view wx:if="{{leaveList.length > 0}}">
+<view wx:if="{{leaveList.length > 0}}" style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">
   <view class="card" wx:for="{{leaveList}}" wx:key="{{index}}" bindtap="goDetail" data-content="{{item.forContent}}" data-createTime="{{item.createTime}}" data-forStatus="{{item.forStatus}}" data-name="{{item.name}}" data-startTime="{{item.startTime}}" data-endTime="{{item.endTime}}">
     <view class="head">
       <view class="createtime">{{item.createTime}}</view>
@@ -29,4 +29,4 @@
   <view class="text">哎呀~还没有数据耶</view>
   <view class="text">请检查学生绑定信息后联系管理员</view>
 </view>
-<button class="addBtn" bindtap="addLeave">新增请假</button>
+<button class="addBtn" bindtap="addLeave" style="margin-bottom: {{isIphoneX ? '50rpx' : '0rpx'}};">新增请假</button>
